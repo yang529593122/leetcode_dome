@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { List } from 'antd';
+import {
+    searchInsert,
+    maxArea,
+    threeSum,
+    removeDuplicates,
+    removeElement,
+    nextPermutation
+} from './utils/ArrayCom'
+import {ARRAT_LIST_FN} from './consts/ArrayData'
+import {useEffect} from "react";
 
 function App() {
+    useEffect(()=>{
+        console.log(nextPermutation([1,2,3,4,5]))
+    },[])
+    const changeItem = (item) =>{
+        console.log(item)
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <List
+          header={<div>Array</div>}
+          bordered
+          dataSource={ARRAT_LIST_FN}
+          renderItem={item => (<List.Item onClick={()=> changeItem(item)}>
+              <List.Item.Meta description={item.title}/>
+          </List.Item>)}
+      />
+
     </div>
   );
 }
