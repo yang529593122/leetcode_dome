@@ -28,4 +28,8 @@ export const ARRAT_LIST_FN = [
         title: '下一个排列',
         method:'nextPermutation'
     },
+    {
+        title: '搜索旋转排序数组',
+        method:'search'
+    },
 ];
